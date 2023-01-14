@@ -52,6 +52,7 @@ const handleUser = (user, token) => {
       "Client-Id": twitchApi.client_id
     }
   }).then(resp => {
+    chrome.action.setBadgeText({text: resp.data.length + ""})
     resp.data.forEach(stream => {
       cardList.innerHTML = cardList.innerHTML + `
       <a class="card" href="https://twitch.tv/${stream.user_login}" target="_blank">
