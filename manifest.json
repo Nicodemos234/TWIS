@@ -4,6 +4,7 @@
   "description": "See who are streaming on twitch",
   "version": "1.0",
   "action": {
-    "default_popup": "popup/popup.html"
+    "default_popup": "popup/popup.html",
+    "default_icon": "images/icon.png"
   }
 }
