@@ -1,0 +1,207 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* End reset css */
+
+html {
+  width: 353px;
+  height: 589px;
+}
+
+body {
+  font-family: 'Poppins';
+  color: #E9E9E9;
+	display: flex;
+	flex-flow: column;
+	max-height: 100vh;
+}
+
+header {
+  background-color: #B967FF;
+  height: 40px;
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 16px;
+  align-items: center;
+}
+
+#logo {
+	width: 74px;
+	height: 41px;
+}
+
+.logged-user {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+}
+
+.logged-user img {
+	margin-left: 8px;
+}
+
+.logged-user p {
+	line-height: 12px;
+	font-size: 12px;
+	font-weight: 500;
+}
+
+.user-menu {
+	position: absolute;
+	width: 90px;
+	height: 90px;
+	display: none;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1);
+	border-radius: 8px;
+	position: fixed;
+	top: 44px;
+	right: 8px;
+	background-color: white;
+	padding: 0;
+}
+
+.user-menu button {
+	background: none;
+	border: none;
+	font-family: 'Poppins';
+	font-style: normal;
+	font-weight: 500;
+	font-size: 12px;
+	line-height: 18px;
+	cursor: pointer;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: flex-end;
+	width: 100%;
+	padding: 8px;
+	transition: all 0.2s ease;
+}
+
+.user-menu button:hover {
+	background: #AFAFAF1A;
+}
+
+.card-list {
+	display: flex;
+	flex-flow: column;
+	align-items: stretch;
+	flex: 1 1 auto;
+	overflow-y: auto;
+}
+
+.card {
+	display: flex;
+	flex-direction: row;
+	padding: 11px 13px;
+	gap: 11px;
+	border-bottom: 2px solid rgba(175, 175, 175, 0.4);
+	cursor: pointer;
+	transition: all 0.2s ease;
+}
+
+.card:hover {
+	background-color: #E9E9E95F;
+}
+
+.card .image-wrapper {
+	width: 74px;
+	height: 43px;
+	background: #B967FF;
+	position: relative;
+}
+
+.card .time-area {
+	font-family: 'Poppins';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 8px;
+	line-height: 8px;
+	background: rgba(0, 0, 0, 0.5);
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	padding: 2px;
+}
+
+.info-area {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-start;
+	padding: 0px;
+	gap: 3px;
+}
+
+.live-user {
+	font-family: 'Poppins';
+	font-style: normal;
+	font-weight: 700;
+	font-size: 12px;
+	line-height: 12px;
+	color: #000000;
+}
+
+.other-info {
+	font-family: 'Poppins';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 10px;
+	line-height: 10px;
+	color: #636363;
+}
+
+.limit-line-1 {
+	max-height: 10px;
+	overflow: hidden;
+}
