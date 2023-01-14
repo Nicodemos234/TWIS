@@ -76,18 +76,18 @@ header {
 	height: 41px;
 }
 
-.logged-user {
+.menu-right {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	cursor: pointer;
 }
 
-.logged-user img {
+.menu-right img {
 	margin-left: 8px;
 }
 
-.logged-user p {
+.menu-right p {
 	line-height: 12px;
 	font-size: 12px;
 	font-weight: 500;
@@ -133,7 +133,7 @@ header {
 }
 
 .card-list {
-	display: flex;
+	display: none;
 	flex-flow: column;
 	align-items: stretch;
 	flex: 1 1 auto;
@@ -148,6 +148,7 @@ header {
 	border-bottom: 2px solid rgba(175, 175, 175, 0.4);
 	cursor: pointer;
 	transition: all 0.2s ease;
+	text-decoration: none;
 }
 
 .card:hover {
@@ -159,6 +160,7 @@ header {
 	height: 43px;
 	background: #B967FF;
 	position: relative;
+	display: flex;
 }
 
 .card .time-area {
@@ -172,6 +174,8 @@ header {
 	right: 0;
 	bottom: 0;
 	padding: 2px;
+	color: #E9E9E9;
+	text-decoration: none;
 }
 
 .info-area {
@@ -204,4 +208,24 @@ header {
 .limit-line-1 {
 	max-height: 10px;
 	overflow: hidden;
+}
+
+.not-logged-body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+}
+
+.not-logged-body h1 {
+	font-family: 'Poppins';
+	font-style: normal;
+	font-weight: 500;
+	font-size: 12px;
+	line-height: 12px;
+	color: #000000;
+}
+
+#logged-user {
+	display: none;
 }

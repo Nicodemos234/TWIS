@@ -3,8 +3,27 @@
   "name": "TWIS - Twitch Who is Streaming",
   "description": "See who are streaming on twitch",
   "version": "1.0",
+  "icons": { 
+    "16": "images/16.png",
+    "48": "images/48.png",
+    "128": "images/128.png"
+  },
   "action": {
     "default_popup": "popup/popup.html",
     "default_icon": "images/icon.png"
-  }
+  },
+  "permissions": [
+    "storage"
+  ],
+  "content_scripts": [
+    {
+      "js": [
+        "scripts/content.js"
+      ],
+      "matches": [
+        "https://twitch.tv/*",
+        "https://nicodemos234.github.io/*"
+      ]
+    }
+  ]
 }
