@@ -1,3 +1,4 @@
+<p align="center"><img alt='Logo' src='./images/icon.png'/></p>
 <h1 align="center">TWIS - Twitch Who is Streaming</h1>
 
 <p align="center">Screenshot:</p>
