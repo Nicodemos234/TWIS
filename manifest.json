@@ -1,0 +1,9 @@
+{
+  "manifest_version": 3,
+  "name": "TWIS - Twitch Who is Streaming",
+  "description": "See who are streaming on twitch",
+  "version": "1.0",
+  "action": {
+    "default_popup": "index.html"
+  }
+}
