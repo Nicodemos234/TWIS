@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "TWIS - Twitch Who is Streaming",
   "description": "See who are streaming on twitch",
-  "version": "1.0",
+  "version": "1.1",
   "icons": { 
     "16": "images/16.png",
     "48": "images/48.png",
