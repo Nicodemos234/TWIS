@@ -23,7 +23,7 @@ chrome.alarms.onAlarm.addListener(() => {
                   } else {
                     const prev = previousOnlines.onlineStreams
                     const filtered = onlineStreams.filter(stream => prev.find(prevStream => prevStream.id === stream.id) === undefined)
-                    if(filtered.length) {
+                    if(!!filtered.length && !!prev.length) {
                       filtered.forEach(streamFiltered => {
                         chrome.notifications.create({
                           type: "basic",
