@@ -9,7 +9,7 @@ export const Wrapper = styled.div`
 `;
 
 export const MainLogo = styled.img`
-  height: 4rem;
+  height: 2.5rem;
 `;
 
 export const MenuIcon = styled.img`
