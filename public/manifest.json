@@ -11,5 +11,11 @@
     "48": "images/48.png",
     "128": "images/128.png"
   },
-  "permissions": []
+  "content_scripts": [
+    {
+      "js": ["assets/content.js"],
+      "matches": ["https://twitch.tv/*", "https://nicodemos234.github.io/*"]
+    }
+  ],
+  "permissions": ["storage", "alarms", "notifications"]
 }
