@@ -18,7 +18,24 @@ export const StreamImagePreview = styled.img`
   border-radius: 0.25rem;
 `;
 
-export const StreamInfo = styled.div`
+export const StreamImageWrapper = styled.div`
+  position: relative;
+`;
+
+export const StreamUptime = styled.p`
+  position: absolute;
+  bottom: 0.25rem;
+  right: 0;
+  border-radius: 0.25rem;
+  padding: 0.1rem 0.25rem;
+  background: ${({ theme }) => theme.colors.darkGrey + "80"};
+
+  font-family: "Poppins", sans-serif;
+  font-size: 0.625rem;
+  color: ${({ theme }) => theme.colors.whiteText};
+`;
+
+export const StreamInfoWrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 0.25rem;

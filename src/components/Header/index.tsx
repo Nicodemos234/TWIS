@@ -11,38 +11,25 @@ import menuIcon from "../../assets/menu.svg";
 import infoIcon from "../../assets/info.svg";
 import logoutIcon from "../../assets/logout.svg";
 import userIcon from "../../assets/user.svg";
-import { useCallback, useState } from "react";
+import { useHeader } from "./useHeader";
 import { useAuth } from "../../hooks/useAuth";
-
 export const Header = () => {
-  const [menuIsOpen, setMenuIsOpen] = useState(false);
-  const { token, logout, login } = useAuth();
-
-  const handleMenuClick = useCallback(() => {
-    setMenuIsOpen((isOpen) => !isOpen);
-  }, []);
-
-  const handleAboutClick = useCallback(() => {
-    window.open("https://github.com/Nicodemos234/twis", "_blank");
-    setMenuIsOpen(false);
-  }, []);
-
-  const handleLogoutClick = useCallback(() => {
-    logout();
-    setMenuIsOpen(false);
-  }, [logout]);
-
-  const handleLoginClick = useCallback(() => {
-    login();
-    setMenuIsOpen(false);
-  }, [login]);
+  const {
+    menuIsOpen,
+    username,
+    handleMenuClick,
+    handleAboutClick,
+    handleLogoutClick,
+    handleLoginClick,
+  } = useHeader();
+  const { token } = useAuth();
 
   return (
     <Wrapper>
       <MainLogo src={twisLogo} alt="twis logo" />
       {token ? (
         <MenuWrapper onClick={handleMenuClick}>
-          Nicodemos234
+          {username}
           <MenuIcon src={menuIcon} alt="menu icon" />
           {menuIsOpen && (
             <Menu>

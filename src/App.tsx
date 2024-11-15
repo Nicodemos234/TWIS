@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { Header } from "./components/Header";
-import { TwitchCard } from "./components/TwitchCard";
+import { StreamList } from "./components/StreamList";
 
 const Wrapper = styled.div`
   display: flex;
@@ -12,29 +12,11 @@ const Wrapper = styled.div`
   max-height: 100vh;
 `;
 
-const Content = styled.div`
-  display: flex;
-  flex-grow: 1;
-  align-self: stretch;
-  flex-direction: column;
-  overflow-y: auto;
-  overflow-x: hidden;
-`;
-
 function App() {
   return (
     <Wrapper>
       <Header />
-      <Content>
-        <TwitchCard />
-        <TwitchCard />
-        <TwitchCard />
-        <TwitchCard />
-        <TwitchCard />
-        <TwitchCard />
-        <TwitchCard />
-        <TwitchCard />
-      </Content>
+      <StreamList />
     </Wrapper>
   );
 }

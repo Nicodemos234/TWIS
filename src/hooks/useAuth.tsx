@@ -36,20 +36,20 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     chrome.storage.local.remove("token", function () {
       setToken(undefined);
     });
+    chrome.storage.local.remove("user");
     setToken(undefined);
   }, []);
 
   const login = useCallback(() => {
-    console.log(
-      "will create tabs with url",
-      `https://id.twitch.tv/oauth2/authorize?response_type=token&client_id=${twitchApi.client_id}&redirect_uri=${twitchApi.redirect_uri}&scope=${twitchApi.scope}`
-    );
     chrome.tabs.create({
       url: `https://id.twitch.tv/oauth2/authorize?response_type=token&client_id=${twitchApi.client_id}&redirect_uri=${twitchApi.redirect_uri}&scope=${twitchApi.scope}`,
     });
   }, []);
 
-  const value = useMemo(() => ({ token, logout, login }), [token]);
+  const value = useMemo(
+    () => ({ token, logout, login }),
+    [token, logout, login]
+  );
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 };
 

@@ -1,26 +1,34 @@
+import { StreamInfo } from "../../hooks/useTwitch";
 import {
   StreamOtherInfo,
   StreamImagePreview,
-  StreamInfo,
+  StreamInfoWrapper,
   StreamUser,
   Wrapper,
+  StreamImageWrapper,
+  StreamUptime,
 } from "./styles";
+import { useTwitchCard } from "./useTwitchCard";
 
-export const TwitchCard = () => {
+export const TwitchCard = ({ stream }: { stream: StreamInfo }) => {
+  const { handleCardClick, streamUptime } = useTwitchCard(stream);
+
   return (
-    <Wrapper>
-      <StreamImagePreview
-        src="https://static-cdn.jtvnw.net/previews-ttv/live_user_rubius-500x280.jpg"
-        alt="Stream preview"
-      />
-      <StreamInfo>
-        <StreamUser>Rubius</StreamUser>
-        <StreamOtherInfo>Just Chatting</StreamOtherInfo>
+    <Wrapper onClick={handleCardClick}>
+      <StreamImageWrapper>
+        <StreamImagePreview
+          src={stream.thumbnail_url.replace("{width}x{height}", "360x200")}
+          alt="Stream preview"
+        />
+        <StreamUptime>{streamUptime}</StreamUptime>
+      </StreamImageWrapper>
+      <StreamInfoWrapper>
+        <StreamUser>{stream.user_name}</StreamUser>
         <StreamOtherInfo>
-          💀SKIBIDI CRAFT DIA 4💀POV DEL GANADOR💀100.000$💀REVIVIERON AL
-          MUFAS💀SEGUIMOS MALDITOS💀
+          {stream.game_name} - {stream.viewer_count}
         </StreamOtherInfo>
-      </StreamInfo>
+        <StreamOtherInfo>{stream.title}</StreamOtherInfo>
+      </StreamInfoWrapper>
     </Wrapper>
   );
 };
