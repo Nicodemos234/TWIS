@@ -27,6 +27,7 @@ export const MenuWrapper = styled.div`
   gap: 0.5rem;
   color: ${({ theme }) => theme.colors.whiteText};
   position: relative;
+  cursor: pointer;
 `;
 
 export const Menu = styled.div`

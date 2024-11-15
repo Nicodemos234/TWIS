@@ -27,6 +27,7 @@ export const StreamInfo = styled.div`
 export const StreamUser = styled.p`
   font-family: "Poppins", sans-serif;
   font-weight: 600;
+  font-size: 0.875rem;
 `;
 
 export const StreamOtherInfo = styled.p`
