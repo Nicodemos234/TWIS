@@ -2,7 +2,6 @@ import { styled } from "styled-components";
 
 export const Wrapper = styled.div`
   display: flex;
-  flex-grow: 1;
   align-items: center;
   justify-content: space-between;
   background-color: ${({ theme }) => theme.colors.primary};
@@ -60,6 +59,6 @@ export const MenuButton = styled.button`
   padding: 0.5rem 0.75rem;
 
   &:hover {
-    background: ${({ theme }) => theme.colors.hover};
+    background: ${({ theme }) => theme.colors.grey};
   }
 `;

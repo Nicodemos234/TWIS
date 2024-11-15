@@ -4,7 +4,8 @@ const Theme = {
   colors: {
     primary: "#b967ff",
     whiteText: "#e9e9e9",
-    hover: "#f5f5f5",
+    grey: "#f5f5f5",
+    darkGrey: "#636363",
   },
 };
 
