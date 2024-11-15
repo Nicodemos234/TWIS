@@ -1,5 +1,5 @@
 import { useCallback, useMemo } from "react";
-import { StreamInfo } from "../../hooks/useTwitch";
+import { StreamInfo } from "../../api";
 
 export const useTwitchCard = (stream: StreamInfo) => {
   const handleCardClick = useCallback(() => {

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useAuth } from "../../hooks/useAuth";
-import { StreamInfo, useTwitch } from "../../hooks/useTwitch";
+import { useTwitch } from "../../hooks/useTwitch";
+import { StreamInfo } from "../../api";
 
 export const useStreamList = () => {
   const [streamList, setStreamList] = useState<StreamInfo[]>([]);

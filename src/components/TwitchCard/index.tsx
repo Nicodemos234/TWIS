@@ -1,4 +1,4 @@
-import { StreamInfo } from "../../hooks/useTwitch";
+import { StreamInfo } from "../../api";
 import {
   StreamOtherInfo,
   StreamImagePreview,

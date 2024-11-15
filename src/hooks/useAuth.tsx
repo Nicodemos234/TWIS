@@ -7,6 +7,7 @@ import {
   useState,
 } from "react";
 import { twitchApi } from "../consts";
+import { setExtensionBadge } from "../utils";
 
 type AuthContextType = {
   token?: string;
@@ -33,11 +34,9 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
   }, []);
 
   const logout = useCallback(() => {
-    chrome.storage.local.remove("token", function () {
-      setToken(undefined);
-    });
-    chrome.storage.local.remove("user");
+    chrome.storage.local.clear();
     setToken(undefined);
+    setExtensionBadge("");
   }, []);
 
   const login = useCallback(() => {
