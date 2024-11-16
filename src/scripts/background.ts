@@ -6,18 +6,20 @@ import {
   setExtensionBadge,
 } from "../utils";
 
-addChromeListener("setBadge", (message) => {
-  setExtensionBadge(message.text);
-});
-
-chrome.alarms.create({ delayInMinutes: 0, periodInMinutes: 1 });
-
-const updateBadgeWithStreamsSize = async () => {
-  const token = (await getDataFromChromeStorage("token")) as string | undefined;
+const updateBadgeWithStreamsSize = async (tokenProp?: string) => {
+  const token =
+    tokenProp ||
+    ((await getDataFromChromeStorage("token")) as string | undefined);
   if (!token) return;
   const streams = await getTwitchStreamFollowed(token);
   setExtensionBadge(streams.length + "");
 };
+
+addChromeListener("updateBadgeToFollowers", (message) => {
+  updateBadgeWithStreamsSize(message.text);
+});
+
+chrome.alarms.create({ delayInMinutes: 0, periodInMinutes: 1 });
 
 updateBadgeWithStreamsSize();
 
