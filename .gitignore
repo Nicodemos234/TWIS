@@ -13,6 +13,7 @@ dist-ssr
 *.local
 
 build
+artifacts
 
 # Editor directories and files
 .vscode/*
