@@ -1,4 +1,5 @@
 import { twitchApi } from "./consts";
+import { getDataFromChromeStorage } from "./utils";
 
 export type CurrentTwitchUser = {
   id: string;
@@ -28,28 +29,26 @@ export type StreamInfo = {
 export const getTwitchUser = async (
   token: string
 ): Promise<CurrentTwitchUser> => {
-  return await new Promise<CurrentTwitchUser>((resolve) =>
-    chrome.storage.local.get("user", function (items) {
-      const user = items.user;
-      if (user) resolve(user as CurrentTwitchUser);
+  return await new Promise<CurrentTwitchUser>(async (resolve) => {
+    const user = await getDataFromChromeStorage("user");
+    if (user) resolve(user as CurrentTwitchUser);
 
-      // If no user is saved, fetch it from the API
-      fetch("https://api.twitch.tv/helix/users", {
-        headers: {
-          Authorization: `Bearer ${token}`,
-          "Client-Id": twitchApi.client_id,
-        },
-      }).then((response) => {
-        response.json().then((userResponse) => {
-          const user = userResponse?.data?.[0];
-          if (!user) throw new Error("Error to get user");
+    // If no user is saved, fetch it from the API
+    fetch("https://api.twitch.tv/helix/users", {
+      headers: {
+        Authorization: `Bearer ${token}`,
+        "Client-Id": twitchApi.client_id,
+      },
+    }).then((response) => {
+      response.json().then((userResponse) => {
+        const user = userResponse?.data?.[0];
+        if (!user) throw new Error("Error to get user");
 
-          chrome.storage.local.set({ user });
-          resolve(user);
-        });
+        chrome.storage.local.set({ user });
+        resolve(user);
       });
-    })
-  );
+    });
+  });
 };
 
 export const getTwitchStreamFollowed = async (
