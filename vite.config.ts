@@ -20,9 +20,9 @@ export default defineConfig({
       input: {
         main: "./index.html",
         content: "./src/scripts/content.ts",
+        background: "./src/scripts/background.ts",
       },
       output: {
-        // Nomeia os arquivos de saída para mantê-los organizados
         entryFileNames: "assets/[name].js",
         chunkFileNames: "assets/[name].js",
         assetFileNames: "assets/[name].[ext]",

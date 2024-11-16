@@ -17,5 +17,8 @@
       "matches": ["https://twitch.tv/*", "https://nicodemos234.github.io/*"]
     }
   ],
-  "permissions": ["storage", "alarms", "notifications"]
+  "permissions": ["storage", "alarms", "notifications"],
+  "background": {
+    "service_worker": "assets/background.js"
+  }
 }
