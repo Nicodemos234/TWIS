@@ -5,5 +5,5 @@
 <p align="center">Screenshot:</p>
 <p align="center">
   <img alt='Screenshot' src='./public/images/print1.png'/>
-  <img alt='Screenshot' src='./public/images/print1.png'/>
+  <img alt='Screenshot' src='./public/images/print2.png'/>
 </p>
